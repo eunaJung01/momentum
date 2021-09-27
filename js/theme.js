@@ -6,16 +6,21 @@ const themeList = document.querySelector("#themeList");
 const bgImages = ["1-1.jpeg", "2-1.jpeg", "3-1.jpeg", "4-1.jpeg", "5-1.jpeg", "6-1.jpeg"];
 const themeImages = ["1-2.png", "2-2.png", "3-2.png", "4-2.png", "5-2.png", "6-2.png"];
 const checkedThemeImages = ["1-3.png", "2-3.png", "3-3.png", "4-3.png", "5-3.png", "6-3.png"];
+
+const bgColors = ["#f991a0", "#f49b85", "#cadbcd", "#b8c6f6", "#b196c1", "#5e3b59"];
 const colors = ["#b3d6fd", "#feeeae", "#d2bcfa", "#fa9898", "#bad1fc", "#dfd2fe"];
 
 const firstTheme = Math.floor(Math.random() * bgImages.length); // 처음 시작 시 random
 setTheme(firstTheme);
+var theme_index = firstTheme; // 초기값
 
 function setTheme(index) {
+    theme_index = index;
     const chosenImage = bgImages[index];
     const chosenTheme = themeImages[index];
     const checkedTheme = checkedThemeImages[index];
     const chosenColor = colors[index];
+    const chosenBgColor = bgColors[index];
 
     document.querySelector("body").style.backgroundImage = `url(img/${chosenImage})`;
     document.querySelector(".clock").style.background = chosenColor;
@@ -25,9 +30,10 @@ function setTheme(index) {
     buttonImg.src = `img/${chosenTheme}`;
     button.appendChild(buttonImg);
     setButtonAction(buttonImg);
-
+    
     setThemeList(index, checkedTheme);
 }
+
 
 function setThemeList(index, checkedTheme) {
     for (i = 0; i < num; i++) {
@@ -56,7 +62,10 @@ function setThemeListAction() {
 }
 function changeTheme() {
     remove();
-    setTheme(this.id);
+    theme_index = this.id;
+    setTheme(theme_index);
+    setAnalogClockTheme(theme_index);
+    setClockTheme();
 }
 function remove() {
     const buttonImg = document.querySelector("#button img");
@@ -64,5 +73,22 @@ function remove() {
     for (i = 0; i < num; i++) {
         const themeListImg = document.querySelector("#themeList img");
         themeList.removeChild(themeListImg);
+    }
+}
+
+// setting themes on the elements
+function setClockTheme() {
+    if (theme_index == 5) {
+        document.querySelector("#time .clock").style.color = "white";
+    } else {
+        document.querySelector("#time .clock").style.color = "black";
+    }
+}
+function setAnalogClockTheme() {
+    document.querySelector(".inner-clock-face").style.background = colors[theme_index];
+    if (theme_index == 1 || theme_index == 5) {
+        document.querySelector(".second-hand").style.background = "black";
+    } else {
+        document.querySelector(".second-hand").style.background = "white";
     }
 }
