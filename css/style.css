@@ -1,0 +1,214 @@
+* {
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.hidden {
+    display: none;
+}
+
+input::placeholder {
+    color: black;
+}
+
+body {
+    background-size: 100%;
+}
+
+#theme {
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+}
+#theme img {
+    position: relative;
+    display: block;
+    width: 40px;
+    margin: 15px 15px;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#themeList {
+    overflow: hidden;
+    margin: 7px 10px;
+    width: 50px;
+    height: 319px;
+    border: 2px inset;
+    border-top-color: black;
+    border-left-color: black;
+    border-right-color: white;
+    border-bottom-color: white;
+}
+#themeList img {
+    display: block;
+    margin: 5px auto;
+}
+#themeList img:first-child {
+    margin-top: 15px;
+}
+#themeList img:last-child {
+    margin-bottom: 15px;
+}
+
+#intro .clock {
+    position: relative;
+    width: 500px;
+    margin: 260px auto 30px auto;
+    border-radius: 30px;
+    box-shadow: 5px 5px white;
+    color: black;
+    font-family: 'Viga', sans-serif;
+    font-size: 90px;
+    text-align: center;
+}
+
+#intro {
+    /* display: block; */
+}
+
+#login-form {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#login-form input {
+    width: 250px;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+    border-radius: 10px;
+    margin-right: 10px;
+    background : white;
+    font-size: 17px;
+    text-align: center;
+}
+#login-form button {
+    width: 80px;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 17px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#quote {
+    width: 1340px;
+    height: 38px;
+    line-height: 38px;
+    border: 1px solid white;
+    border-radius: 25px;
+    text-align: center;
+    margin: 10px 0 0 0;
+}
+
+#main {
+    position: absolute;
+    left: 75px;
+}
+
+#first, #second, #third {
+    width: 432px;
+    height: 660px;
+    float: left;
+    margin: 20px 20px 20px 0;
+    border: 1px solid white;
+    text-align: center;
+}
+#third {
+    margin-right: 0;
+}
+
+#greeting {
+    height: 70px;
+    line-height: 70px;
+    margin-top: 0;
+    border: 1px solid white;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 30px;
+}
+
+#main .clock {
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid white;
+    border-radius: 25px;
+    text-align: center;
+    font-size: 25px;
+}
+
+#calendar {
+    /* height: ; */
+    border: 1px solid white;
+    text-align: center;
+}
+
+#weather {
+    /* height: ; */
+    margin-bottom: 0;
+    border: 1px solid white;
+    text-align: center;
+}
+
+/* #greeting {
+    position: relative;
+    width: 400px;
+    height: 45px;
+    line-height: 45px;
+    margin: 0 auto 20px auto;
+    border-radius: 15px;
+    background: rgba(232, 232, 232, 0.8);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 28px;
+    text-align: center;
+}
+
+#todo-form {
+    position: relative;
+    margin: 0 auto 17px auto;
+    text-align: center;
+}
+#todo-form input {
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    border: 0;
+    border-radius: 15px;
+    background: rgba(232, 232, 232, 0.8);
+    font-size: 17px;
+    text-align: center;
+}
+
+#todo-list {
+    position: relative;
+    width: 500px;
+    margin: 0 auto 30px auto;
+    border: 5px;
+    border-radius: 30px;
+    background: rgba(232, 232, 232, 0.8);
+    list-style: square;
+    list-style-position: inside;
+    font-size: 15px;
+    text-align: left;
+}
+#todo-list li {
+    height: 22px;
+    margin: 0 0 10px 170px;
+    text-overflow: ellipsis;
+}
+#todo-list li:first-child {
+    padding-top: 10px;
+}
+#todo-list li:last-child {
+    margin-bottom: 0;
+    padding-bottom: 10px;
+}
+#todo-list button {
+    width: 22px;
+    height: 22px;
+    margin: 0 10px;
+} */
