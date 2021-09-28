@@ -26,33 +26,68 @@
     </div>
     <div id="main">
         <div id="quote"></div>
-        <div id="first">
-            <h1 id="greeting" class="hidden"></h1>
-            <div id="time">
-                <div class="analog-clock"></div>
-                <h2 class="clock">00:00:00</h2>
+        <div id="container">
+            <div id="first">
+                <h1 id="greeting" class="hidden"></h1>
+                <div id="time">
+                    <div class="analog-clock"></div>
+                    <h2 class="clock">00:00:00</h2>
+                </div>
+                <div class="calendar">
+                    <div class="selected">
+                        <div class="selected-day"></div>
+                        <div class="selected-date"></div>
+                    </div>
+                    <div class="calendar-box">
+                        <div class="calendar-bar clearfix">
+                            <button type="button" title="prev" class="btn prev">
+                            </button>
+                            <span class="calendar-month"></span>
+                            <span class="calendar-year"></span>
+                            <button type="button" title="next" class="btn next">
+                            </button>
+                        </div>
+                        <table class="calendar-table">
+                            <thead>
+                                <tr>
+                                    <th id="Sunday">S</th>
+                                    <th>M</th>
+                                    <th>T</th>
+                                    <th>W</th>
+                                    <th>T</th>
+                                    <th>F</th>
+                                    <th id="Saturday">S</th>
+                                </tr>
+                            </thead>
+                            <tbody class="calendar-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div id="weather">
+                    <!-- class="hidden" -->
+                    <span>날씨, 온도, 지역</span>
+                    <span></span>
+                </div>
             </div>
-            <h2 id="calendar">0000/00/00 ()</h2>
-            <div id="weather"> <!-- class="hidden" -->
-                <span>날씨, 온도, 지역</span>
-                <span></span>
+            <div id="second">
+                <form id="todo-form">
+                    <!-- class="hidden" -->
+                    <input required type="text" placeholder="Write a To Do and Press Enter" />
+                </form>
             </div>
-        </div>
-        <div id="second">
-            <form id="todo-form"> <!-- class="hidden" -->
-                <input required type="text" placeholder="Write a To Do and Press Enter" />
-            </form>
-        </div>
-        <div id="third">
-            <div id="done"> <!-- class="hidden" -->
-                <h2>done</h2>
+            <div id="third">
+                <div id="done">
+                    <!-- class="hidden" -->
+                    <h2>done</h2>
+                </div>
             </div>
         </div>
     </div>
     <ul id="todo-list" class="hidden"></ul>
     <script src="js/theme.js"></script>
     <script src="js/clock.js"></script>
-    <script src="js/analog-clock"></script>
+    <script src="js/analog-clock.js"></script>
+    <script src="js/calendar.js"></script>
     <script src="js/greetings.js"></script>
     <script src="js/quotes.js"></script>
     <script src="js/todo.js"></script>
