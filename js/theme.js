@@ -30,7 +30,7 @@ function setTheme(index) {
     buttonImg.src = `img/${chosenTheme}`;
     button.appendChild(buttonImg);
     setButtonAction(buttonImg);
-    
+
     setThemeList(index, checkedTheme);
 }
 
@@ -63,9 +63,12 @@ function setThemeListAction() {
 function changeTheme() {
     remove();
     theme_index = this.id;
+
     setTheme(theme_index);
     setAnalogClockTheme(theme_index);
     setClockTheme();
+    setCalendarTheme_today();
+    setCalendarTheme_active();
 }
 function remove() {
     const buttonImg = document.querySelector("#button img");
@@ -91,4 +94,13 @@ function setAnalogClockTheme() {
     } else {
         document.querySelector(".second-hand").style.background = "white";
     }
+}
+function setCalendarTheme_today() {
+    const today = document.querySelector(".calendar-table td.today");
+    if (today) {
+        document.querySelector(".calendar-table td.today").style.background = colors[theme_index];
+    }
+}
+function setCalendarTheme_active() {
+    document.querySelector(".calendar-table td.day-active").style.background = bgColors[theme_index];
 }
