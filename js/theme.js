@@ -102,5 +102,6 @@ function setCalendarTheme_today() {
     }
 }
 function setCalendarTheme_active() {
-    document.querySelector(".calendar-table td.day-active").style.background = bgColors[theme_index];
+    const day_active = document.querySelector(".calendar-table td.day-active");
+    day_active.style.background = bgColors[theme_index];
 }
