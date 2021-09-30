@@ -130,20 +130,21 @@ body {
 
 /* first */
 #greeting {
-    height: 70px;
-    line-height: 70px;
+    height: 65px;
+    line-height: 65px;
     margin-top: 0;
     border: 1px solid white;
     border-radius: 25px;
+    background-color: white;
+    color: black;
     text-align: center;
     font-size: 30px;
 }
 
 #time {
-    border: 1px solid white;
     border-radius: 25px;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 #time .clock {
     margin: 10px 0 0 0;
