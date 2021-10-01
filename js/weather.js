@@ -42,19 +42,21 @@ function onGeoOk(position) {
     fetch(url).then(response => response.json().then(data => {        
         // weather.innerText = `${data.weather[0].main}`;
         weather.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-        changeWeatherCSS();
         temperature.innerText = `${Math.round(data.main.temp)}℃`;
         // city.innerText = data.name;
+        changeCSS();
     }));
 }
 function onGeoError() {
     alert("Can't find you. No weather for you.");
 }
 
-function changeWeatherCSS() {
+function changeCSS() {
   weather.style.width = "70px";
   weather.style.height = "70px";
   weather.style.margin = "2.5px auto";
+  weather.style.cursor = "pointer";
+  city.style.cursor = "pointer";
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
