@@ -320,6 +320,7 @@ body {
 #weather-location {
     display: block;
     height: 75px;
+    line-height: 75px;
     margin-top: 20px;
     border: 1px solid white;
     border-radius: 25px;
@@ -343,14 +344,14 @@ body {
 }
 #weather {
     margin-left: 50px;
-    font-size: 15px;
+    font-size: 18px;
 }
 #temperature {
     font-size: 20px;
     font-weight: bold;
 }
-#location img {
-    /* cursor: pointer; */
+#location {
+    font-size: 13px;
 }
 
 /* #greeting {
