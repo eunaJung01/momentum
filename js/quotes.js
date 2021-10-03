@@ -46,3 +46,5 @@ const quotes = [
   const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
   
   quote.innerText = `${todaysQuote.quote} - ${todaysQuote.author}`;
+
+  setQuotesTheme();

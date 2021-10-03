@@ -66,6 +66,7 @@ function changeTheme() {
 
     setTheme(theme_index);
     setAnalogClockTheme(theme_index);
+    setQuotesTheme();
     setClockTheme();
     setCalendarTheme_today();
     setCalendarTheme_active();
@@ -80,6 +81,11 @@ function remove() {
 }
 
 // setting themes on the elements
+function setQuotesTheme() {
+    const quote = document.querySelector("#quote");
+    quote.style.background = colors[theme_index];
+    quote.style.border = `1px solid ${colors[theme_index]}`;
+}
 function setClockTheme() {
     if (theme_index == 5) {
         document.querySelector("#time .clock").style.color = "white";

@@ -96,17 +96,17 @@ body {
     cursor: pointer;
 }
 
+/* 2nd page */
 #quote {
     width: 1340px;
     height: 38px;
     line-height: 38px;
-    border: 1px solid white;
+    /* border: 1px solid white; */
     border-radius: 25px;
     text-align: center;
     margin: 10px 0 0 0;
 }
 
-/* 2nd page */
 #main {
     position: absolute;
     left: 75px;
@@ -125,6 +125,8 @@ body {
 }
 #second, #third {
     border: 1px solid white;
+    border-radius: 25px;
+    background: white;
 }
 #third {
     margin-right: 0;
