@@ -65,10 +65,6 @@ body {
     text-align: center;
 }
 
-#intro {
-    /* display: block; */
-}
-
 #login-form {
     position: relative;
     text-align: center;
@@ -219,7 +215,7 @@ body {
     width: auto;
     height: 230px;
     padding: 20px 40px;
-    border: 1px solid #ddd;
+    border: 1px solid #ececec;
     border-radius: 25px;
     text-align: center;
     font-weight: 700;
@@ -231,7 +227,7 @@ body {
     height: 50%;
     margin-top: 17%;
     border-radius: 25px;
-    background: #ddd;
+    background: #ececec;
 }
 .selected .selected-day {
     margin-top: 22px;
@@ -356,42 +352,27 @@ body {
     font-size: 13px;
 }
 
-/* #greeting {
-    position: relative;
-    width: 400px;
-    height: 45px;
-    line-height: 45px;
-    margin: 0 auto 20px auto;
-    border-radius: 15px;
-    background: rgba(232, 232, 232, 0.8);
-    font-family: 'Noto Sans KR', sans-serif;
-    font-size: 28px;
-    text-align: center;
-}
-
 #todo-form {
     position: relative;
     margin: 0 auto 17px auto;
     text-align: center;
 }
-#todo-form input {
+#todo-form input, #third #done {
     width: 400px;
     height: 40px;
     line-height: 40px;
+    margin: 15px auto 0 auto;
     border: 0;
     border-radius: 15px;
-    background: rgba(232, 232, 232, 0.8);
+    background: #ececec;
     font-size: 17px;
     text-align: center;
 }
-
 #todo-list {
     position: relative;
-    width: 500px;
-    margin: 0 auto 30px auto;
     border: 5px;
     border-radius: 30px;
-    background: rgba(232, 232, 232, 0.8);
+    /* background: rgba(232, 232, 232, 0.8); */
     list-style: square;
     list-style-position: inside;
     font-size: 15px;
@@ -399,7 +380,7 @@ body {
 }
 #todo-list li {
     height: 22px;
-    margin: 0 0 10px 170px;
+    margin: 0 0 10px 50px;
     text-overflow: ellipsis;
 }
 #todo-list li:first-child {
@@ -413,4 +394,4 @@ body {
     width: 22px;
     height: 22px;
     margin: 0 10px;
-} */
+}
