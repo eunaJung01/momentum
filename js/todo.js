@@ -13,7 +13,7 @@ function saveToDos() {
 function deleteToDo(event) {
     const li = event.target.parentElement;
     li.remove();
-    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // !!
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // filter() : 콜백함수 조건에 해당하는 모든 요소가 있는 배열을 새로 생성
     saveToDos();
 }
 
@@ -24,7 +24,7 @@ function paintToDo(newToDo) {
     span.innerText = newToDo.text;
     const button = document.createElement("button");
     button.innerText = "X";
-    // button.addEventListener("click", deleteToDo);
+    button.addEventListener("click", deleteToDo);
 
     li.appendChild(span);
     li.appendChild(button);
