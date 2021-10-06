@@ -22,13 +22,21 @@ function paintToDo(newToDo) {
     li.id = newToDo.id;
     const span = document.createElement("span");
     span.innerText = newToDo.text;
-    const button = document.createElement("button");
-    button.innerText = "X";
-    button.addEventListener("click", deleteToDo);
+
+    const deleteButton = document.createElement("button");
+    deleteButton.innerText = "✘";
+    deleteButton.addEventListener("click", deleteToDo);
+    const doneButton = document.createElement("button");
+    doneButton.innerText = "✔︎";
+    doneButton.addEventListener("click", doneToDo);
 
     li.appendChild(span);
-    li.appendChild(button);
+    li.appendChild(doneButton);
+    li.appendChild(deleteButton);
     toDoList.appendChild(li);
+}
+function doneToDo() {
+
 }
 
 function handleToDoSubmit(event) {
