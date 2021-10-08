@@ -70,6 +70,7 @@ function changeTheme() {
     setClockTheme();
     setCalendarTheme_today();
     setCalendarTheme_active();
+    setToDoTheme();
 }
 function remove() {
     const buttonImg = document.querySelector("#button img");
@@ -109,5 +110,13 @@ function setCalendarTheme_today() {
 }
 function setCalendarTheme_active() {
     const day_active = document.querySelector(".calendar-table td.day-active");
-    day_active.style.background = bgColors[theme_index];
+    if (day_active) {
+        day_active.style.background = bgColors[theme_index];
+    }
+}
+function setToDoTheme() {
+    const doneButton = document.querySelectorAll("#todo-list #doneButton");
+    const deleteButton = document.querySelectorAll("#todo-list #deleteButton");
+    doneButton.forEach((button) => button.style.color = colors[theme_index]);
+    deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
 }

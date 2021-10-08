@@ -24,9 +24,12 @@ function paintToDo(newToDo) {
     span.innerText = newToDo.text;
 
     const deleteButton = document.createElement("button");
+    deleteButton.id = "deleteButton";
     deleteButton.innerText = "✘";
     deleteButton.addEventListener("click", deleteToDo);
+
     const doneButton = document.createElement("button");
+    doneButton.id = "doneButton";
     doneButton.innerText = "✔︎";
     doneButton.addEventListener("click", doneToDo); // js/done.js
 
@@ -66,3 +69,5 @@ if (savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 }
+
+setToDoTheme();

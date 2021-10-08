@@ -402,6 +402,7 @@ body {
     line-height: 22px;
     margin: 0 5px;
     border: 0;
-    background: #ececec;
+    /* background: #ececec; */
+    background: white;
     cursor: pointer;
 }

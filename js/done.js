@@ -28,8 +28,7 @@ function handleDoneSubmit(event) {
     doneID = event.path[1].id;
     console.log(doneID);
     const done = toDos.find(findID);
-    console.log(done);
-    console.log(done.text);
+    // console.log(done); // why undefined.....???
 
 }
 
