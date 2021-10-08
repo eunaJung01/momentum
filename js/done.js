@@ -23,8 +23,20 @@ function paintDone(newDone) {
 }
 
 // dones 배열에 push
+let doneID = null;
 function handleDoneSubmit(event) {
+    doneID = event.path[1].id;
+    console.log(doneID);
+    const done = toDos.find(findID);
+    console.log(done);
+    console.log(done.text);
 
+}
+
+function findID(element) {
+    if (doneID !== null) {
+        if (element.id === doneID) { return true; }
+    }
 }
 
 const savedDones = localStorage.getItem(DONES_KEY);

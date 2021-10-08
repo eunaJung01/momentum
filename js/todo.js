@@ -40,10 +40,10 @@ function doneToDo(event) {
     handleDoneSubmit(event); // dones 배열에 push
     saveDones();
 
-    const li = event.target.parentElement;
-    li.remove();
-    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // filter() : 콜백함수 조건에 해당하는 모든 요소가 있는 배열을 새로 생성
-    saveToDos();
+    // const li = event.target.parentElement;
+    // li.remove();
+    // toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // filter() : 콜백함수 조건에 해당하는 모든 요소가 있는 배열을 새로 생성
+    // saveToDos();
 }
 
 function handleToDoSubmit(event) {
