@@ -28,15 +28,22 @@ function paintToDo(newToDo) {
     deleteButton.addEventListener("click", deleteToDo);
     const doneButton = document.createElement("button");
     doneButton.innerText = "✔︎";
-    doneButton.addEventListener("click", doneToDo);
+    doneButton.addEventListener("click", doneToDo); // js/done.js
 
     li.appendChild(span);
     li.appendChild(doneButton);
     li.appendChild(deleteButton);
     toDoList.appendChild(li);
 }
-function doneToDo() {
 
+function doneToDo(event) {
+    handleDoneSubmit(event); // dones 배열에 push
+    saveDones();
+
+    const li = event.target.parentElement;
+    li.remove();
+    toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)); // filter() : 콜백함수 조건에 해당하는 모든 요소가 있는 배열을 새로 생성
+    saveToDos();
 }
 
 function handleToDoSubmit(event) {
