@@ -1,10 +1,18 @@
-const done = document.querySelector("#third #done");
+const doneList = document.querySelector("#third #done-list");
+
+const DONES_KEY = "dones";
 
 let dones = [];
-const DONES_KEY = "dones";
 
 function saveDones() {
     localStorage.setItem(DONES_KEY, JSON.stringify(dones));
+}
+
+function deleteDone(event) {
+    const li = event.target.parentElement;
+    li.remove();
+    dones = dones.filter((done) => done.id !== parseInt(li.id)); // 왜 dones 배열에 반영이 안될까..
+    saveDones();
 }
 
 function paintDone(newDone) {
@@ -19,22 +27,26 @@ function paintDone(newDone) {
 
     li.appendChild(span);
     li.appendChild(deleteButton);
-    toDoList.appendChild(li);
+    doneList.appendChild(li);
 }
 
 // dones 배열에 push
 let doneID = null;
 function handleDoneSubmit(event) {
     doneID = event.path[1].id;
-    console.log(doneID);
-    const done = toDos.find(findID);
-    // console.log(done); // why undefined.....???
 
+    const newDoneObj = {
+        text: toDos.find(findID).text,
+        id: doneID,
+    };
+    dones.push(newDoneObj);
+    paintDone(newDoneObj);
+    saveDones();
 }
 
 function findID(element) {
     if (doneID !== null) {
-        if (element.id === doneID) { return true; }
+        if (element.id == doneID) { return true; } // === 말고 ==로 했어야 함
     }
 }
 
