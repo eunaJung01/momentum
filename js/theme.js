@@ -71,6 +71,7 @@ function changeTheme() {
     setCalendarTheme_today();
     setCalendarTheme_active();
     setToDoTheme();
+    setDoneTheme();
 }
 function remove() {
     const buttonImg = document.querySelector("#button img");
