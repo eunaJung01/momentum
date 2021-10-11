@@ -120,3 +120,7 @@ function setToDoTheme() {
     doneButton.forEach((button) => button.style.color = colors[theme_index]);
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
 }
+function setDoneTheme() {
+    const deleteButton = document.querySelectorAll("#done-list #deleteButton");
+    deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
+}

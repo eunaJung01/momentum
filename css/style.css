@@ -397,6 +397,9 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+#done-list li span {
+    width: 298px;
+}
 #todo-list button, #done-list li button {
     display: block;
     float: left;

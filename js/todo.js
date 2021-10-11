@@ -37,6 +37,8 @@ function paintToDo(newToDo) {
     li.appendChild(doneButton);
     li.appendChild(deleteButton);
     toDoList.appendChild(li);
+    
+    setToDoTheme();
 }
 
 function doneToDo(event) {

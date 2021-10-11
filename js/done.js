@@ -22,12 +22,15 @@ function paintDone(newDone) {
     span.innerText = newDone.text;
 
     const deleteButton = document.createElement("button");
+    deleteButton.id = "deleteButton";
     deleteButton.innerText = "✘";
     deleteButton.addEventListener("click", deleteDone);
 
     li.appendChild(span);
     li.appendChild(deleteButton);
     doneList.appendChild(li);
+    
+    setDoneTheme();
 }
 
 // dones 배열에 push
@@ -56,3 +59,5 @@ if (savedDones !== null) {
     dones = parsedDones;
     parsedDones.forEach(paintDone);
 }
+
+setDoneTheme();
