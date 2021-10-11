@@ -11,7 +11,7 @@ function saveDones() {
 function deleteDone(event) {
     const li = event.target.parentElement;
     li.remove();
-    dones = dones.filter((done) => done.id !== parseInt(li.id)); // 왜 dones 배열에 반영이 안될까..
+    dones = dones.filter((done) => done.id !== parseInt(li.id)); // 왜 dones 배열에 반영이 안될까.. : done.id가 문자열로 저장되어 있었음
     saveDones();
 }
 
@@ -33,7 +33,7 @@ function paintDone(newDone) {
 // dones 배열에 push
 let doneID = null;
 function handleDoneSubmit(event) {
-    doneID = event.path[1].id;
+    doneID = parseInt(event.path[1].id);
 
     const newDoneObj = {
         text: toDos.find(findID).text,
