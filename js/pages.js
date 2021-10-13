@@ -13,8 +13,8 @@ const USERNAME_KEY = "userName";
 
 // check userName in localStorage
 const savedUserName = localStorage.getItem(USERNAME_KEY);
-if (savedUserName === null) {
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
+if (savedUserName === null || savedUserName === "") {
+    paint1stPage();
     loginForm.addEventListener("submit", onLoginSubmit);
 } else {
     paint2ndPage(savedUserName);
@@ -26,6 +26,14 @@ function onLoginSubmit(event) {
     const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName); // save in local storage
     paint2ndPage(userName);
+}
+
+function paint1stPage() {
+    loginForm.classList.remove(HIDDEN_CLASSNAME);
+    intro_clock.classList.remove(HIDDEN_CLASSNAME);
+    main.classList.add(HIDDEN_CLASSNAME);
+    quote.classList.add(HIDDEN_CLASSNAME);
+    container.classList.add(HIDDEN_CLASSNAME);
 }
 
 function paint2ndPage(userName) {
