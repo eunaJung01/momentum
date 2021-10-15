@@ -12,13 +12,16 @@ const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
 
 // check userName in localStorage
-const savedUserName = localStorage.getItem(USERNAME_KEY);
-if (savedUserName === null || savedUserName === "") {
-    paint1stPage();
-    loginForm.addEventListener("submit", onLoginSubmit);
-} else {
-    paint2ndPage(savedUserName);
+function checkUserName() {
+    let savedUserName = localStorage.getItem(USERNAME_KEY);
+    if (savedUserName === null || savedUserName === "") {
+        paint1stPage();
+        loginForm.addEventListener("submit", onLoginSubmit);
+    } else {
+        paint2ndPage(savedUserName);
+    }
 }
+checkUserName();
 
 // get userName
 function onLoginSubmit(event) {
@@ -26,6 +29,7 @@ function onLoginSubmit(event) {
     const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName); // save in local storage
     paint2ndPage(userName);
+    loginInput.value = null;
 }
 
 function paint1stPage() {
