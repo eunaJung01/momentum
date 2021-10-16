@@ -72,6 +72,7 @@ function changeTheme() {
     setCalendarTheme_active();
     setToDoTheme();
     setDoneTheme();
+    setRenameTheme();
 }
 function remove() {
     const buttonImg = document.querySelector("#button img");
@@ -124,4 +125,8 @@ function setToDoTheme() {
 function setDoneTheme() {
     const deleteButton = document.querySelectorAll("#done-list #deleteButton");
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
+}
+function setRenameTheme() {
+    const renameButton = document.querySelector("#rename");
+    renameButton.style.color = colors[theme_index];
 }

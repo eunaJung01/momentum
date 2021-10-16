@@ -6,3 +6,4 @@ function rename() {
     localStorage.setItem(USERNAME_KEY, "");
     checkUserName();
 }
+setRenameTheme();
