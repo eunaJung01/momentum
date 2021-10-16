@@ -1,4 +1,4 @@
-const renameButton = document.querySelector("#rename");
+// const renameButton = document.querySelector("#rename"); // in pages.js
 
 renameButton.addEventListener("click", rename);
 

@@ -4,8 +4,9 @@ const greeting = document.querySelector("#greeting");
 
 const intro_clock = document.querySelector("#intro .clock");
 const main = document.querySelector("#main");
-// const quote = document.querySelector("#quote"); // in js/quotes.js
+// const quote = document.querySelector("#quote"); // in quotes.js
 const container = document.querySelector("#container");
+const renameButton = document.querySelector("#rename");
 
 // repeating strings
 const HIDDEN_CLASSNAME = "hidden";
@@ -38,6 +39,7 @@ function paint1stPage() {
     main.classList.add(HIDDEN_CLASSNAME);
     quote.classList.add(HIDDEN_CLASSNAME);
     container.classList.add(HIDDEN_CLASSNAME);
+    renameButton.classList.add(HIDDEN_CLASSNAME);
 }
 
 function paint2ndPage(userName) {
@@ -47,6 +49,7 @@ function paint2ndPage(userName) {
     main.classList.remove(HIDDEN_CLASSNAME);
     quote.classList.remove(HIDDEN_CLASSNAME);
     container.classList.remove(HIDDEN_CLASSNAME);
+    renameButton.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function paintGreetings(userName) {
