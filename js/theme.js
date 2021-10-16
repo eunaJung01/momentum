@@ -128,5 +128,5 @@ function setDoneTheme() {
 }
 function setRenameTheme() {
     const renameButton = document.querySelector("#rename");
-    renameButton.style.color = colors[theme_index];
+    renameButton.style.textShadow = `${colors[theme_index]} 2px 0 4px`;
 }
