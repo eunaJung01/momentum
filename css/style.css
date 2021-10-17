@@ -63,6 +63,7 @@ body {
     font-family: 'Viga', sans-serif;
     font-size: 90px;
     text-align: center;
+    cursor: default;
 }
 
 #login-form {
@@ -101,6 +102,7 @@ body {
     border-radius: 25px;
     text-align: center;
     margin: 10px 0 0 0;
+    cursor: default;
 }
 
 #main {
@@ -139,12 +141,14 @@ body {
     color: black;
     text-align: center;
     font-size: 30px;
+    cursor: default;
 }
 
 #time {
     border-radius: 25px;
     align-items: center;
     margin-bottom: 15px;
+    cursor: default;
 }
 #time .clock {
     margin: 10px 0 0 0;
@@ -220,6 +224,7 @@ body {
     text-align: center;
     font-weight: 700;
     background-color: white;
+    cursor: default;
 }
 .calendar .selected {
     float: left;
@@ -326,6 +331,7 @@ body {
     color: black;
     text-align: center;
     font-size: 20px;
+    cursor: default;
 }
 #weather-location div {
     display: block;
@@ -370,6 +376,7 @@ body {
 }
 #third #done {
     margin-bottom: 17px;
+    cursor: default;
 }
 #todo-list, #done-list {
     position: relative;
@@ -381,6 +388,7 @@ body {
     font-size: 15px;
     text-align: left;
     list-style-position: inside;
+    cursor: default;
 }
 #todo-list li, #done-list li {
     width: 332px;

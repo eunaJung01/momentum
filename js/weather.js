@@ -52,12 +52,10 @@ function changeCSS(weather) {
   weather.style.width = "70px";
   weather.style.height = "70px";
   weather.style.margin = "2.5px auto";
-  weather.style.cursor = "pointer";
 }
 function changeCSS() {
   city.style.width = "113px";
   city.style.height = "75px";
-  city.style.cursor = "pointer";
 }
 
 const weatherDiv = document.querySelector("#weather-location div:first-child");
