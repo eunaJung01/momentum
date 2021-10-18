@@ -32,9 +32,9 @@ body {
 }
 #themeList {
     overflow: hidden;
-    margin: 7px 10px;
     width: 50px;
     height: 319px;
+    margin: 7px 10px;
     border: 2px inset;
     border-top-color: black;
     border-left-color: black;
@@ -53,7 +53,7 @@ body {
 }
 
 /* 1st page */
-#intro .clock {
+#page1 .clock {
     position: relative;
     width: 500px;
     margin: 260px auto 30px auto;
@@ -68,16 +68,16 @@ body {
 
 #login-form {
     position: relative;
-    text-align: center;
     margin-bottom: 20px;
+    text-align: center;
 }
 #login-form input {
     width: 250px;
     height: 40px;
     line-height: 40px;
+    margin-right: 10px;
     border: 0;
     border-radius: 10px;
-    margin-right: 10px;
     background : white;
     font-size: 17px;
     text-align: center;
@@ -98,23 +98,22 @@ body {
     width: 1340px;
     height: 38px;
     line-height: 38px;
-    /* border: 1px solid white; */
+    margin: 10px 0 0 0;
     border-radius: 25px;
     text-align: center;
-    margin: 10px 0 0 0;
     cursor: default;
 }
 
-#main {
+#page2 {
     position: absolute;
+    display: block;
     left: 75px;
     height: auto;
-    display: block;
 }
 
 #first, #second, #third {
-    display: block;
     position: relative;
+    display: block;
     float: left;
     width: 432px;
     height: 660px;
@@ -139,21 +138,21 @@ body {
     border-radius: 25px;
     background-color: white;
     color: black;
-    text-align: center;
     font-size: 30px;
+    text-align: center;
     cursor: default;
 }
 
 #time {
+    margin-bottom: 15px;
     border-radius: 25px;
     align-items: center;
-    margin-bottom: 15px;
     cursor: default;
 }
 #time .clock {
     margin: 10px 0 0 0;
-    text-align: center;
     font-size: 25px;
+    text-align: center;
 }
 .analog-clock {
     width: 130px;
@@ -211,8 +210,8 @@ body {
 .clearfix:after {
   content: '';
   display: block;
-  clear: both;
   float: none;
+  clear: both;
 }
 .calendar {
     display: block;
@@ -236,13 +235,13 @@ body {
 }
 .selected .selected-day {
     margin-top: 22px;
-    font-size: 16px;
     line-height: 16px;
+    font-size: 16px;
 }
 .selected .selected-date {
     margin-bottom: 22px;
-    font-size: 55px;
     line-height: 55px;
+    font-size: 55px;
 }
 .calendar .calendar-box {
     float: right;
@@ -261,9 +260,9 @@ body {
     height: 25px;
     margin-top: 5px;
     border: none;
-    cursor: pointer;
-    font-size: 16px;
     background: none;
+    font-size: 16px;
+    cursor: pointer;
 }
 .calendar-bar .btn:after {
     content: '<';
@@ -329,8 +328,8 @@ body {
     border-radius: 25px;
     background-color: white;
     color: black;
-    text-align: center;
     font-size: 20px;
+    text-align: center;
     cursor: default;
 }
 #weather-location div {

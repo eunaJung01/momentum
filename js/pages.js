@@ -2,8 +2,8 @@ const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 const greeting = document.querySelector("#greeting");
 
-const intro_clock = document.querySelector("#intro .clock");
-const main = document.querySelector("#main");
+const intro_clock = document.querySelector("#page1 .clock");
+const main = document.querySelector("#page2");
 // const quote = document.querySelector("#quote"); // in quotes.js
 const container = document.querySelector("#container");
 const renameButton = document.querySelector("#rename");
