@@ -1,36 +1,5 @@
 const API_KEY = "9586d01dacc2a8dd88cc67f46360d9bf";
 
-const weatherOptions = {
-  Thunderstorm: {
-    iconName: "weather-lightning",
-    gradient: ["#373B44", "#4286f4"]
-  },
-  Rain: {
-    iconName: "weather-rainy",
-    gradient: ["#00C6FB", "#005BEA"]
-  },
-  Snow: {
-    iconName: "weather-snowy",
-    gradient: ["#7DE2FC", "#B9B6E5"]
-  },
-  Clear: {
-    iconName: "weather-sunny",
-    gradient: ["#FF7300", "#FEF253"]
-  },
-  Clouds: {
-    iconName: "weather-cloudy",
-    gradient: ["#D7D2CC", "#304352"]
-  },
-  Mist: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0B0", "#D39D38"]
-  },
-  Dust: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0B0", "#D39D38"]
-  }
-};
-
 const weatherImg = document.querySelector("#weather-location div:first-child img");
 const temperature = document.querySelector("#weather-location div:nth-child(2)");
 const city = document.querySelector("#weather-location div:last-child");
