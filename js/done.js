@@ -1,4 +1,5 @@
 const doneList = document.querySelector("#third #done-list");
+const doneEraseAll = document.querySelector("#third #erase");
 
 const DONES_KEY = "dones";
 
@@ -29,7 +30,7 @@ function paintDone(newDone) {
     li.appendChild(span);
     li.appendChild(deleteButton);
     doneList.appendChild(li);
-    
+
     setDoneTheme();
 }
 
@@ -59,5 +60,13 @@ if (savedDones !== null) {
     dones = parsedDones;
     parsedDones.forEach(paintDone);
 }
+
+doneEraseAll.addEventListener("click", () => {
+    if (confirm("Are you sure?") == true) {
+        dones = [];
+        saveDones();
+        window.location.reload(); // 페이지 새로고침
+    }
+});
 
 setDoneTheme();

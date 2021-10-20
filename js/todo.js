@@ -1,6 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+const toDoEraseAll = document.querySelector("#second #erase");
 
 const TODOS_KEY = "toDos";
 
@@ -37,7 +38,7 @@ function paintToDo(newToDo) {
     li.appendChild(doneButton);
     li.appendChild(deleteButton);
     toDoList.appendChild(li);
-    
+
     setToDoTheme();
 }
 
@@ -66,5 +67,13 @@ if (savedToDos !== null) {
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 }
+
+toDoEraseAll.addEventListener("click", () => {
+    if (confirm("Are you sure?") == true) {
+        toDos = [];
+        saveToDos();
+        window.location.reload(); // 페이지 새로고침
+    }
+});
 
 setToDoTheme();
