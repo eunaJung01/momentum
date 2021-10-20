@@ -2,6 +2,7 @@ const num = 6; // 테마 개수
 const theme = document.querySelector("#theme");
 const button = document.querySelector("#theme #button");
 const themeList = document.querySelector("#themeList");
+const toDoInput = document.querySelector("#todo-form input");
 
 const bgImages = ["1-1.jpeg", "2-1.jpeg", "3-1.jpeg", "4-1.jpeg", "5-1.jpeg", "6-1.jpeg"];
 const themeImages = ["1-2.png", "2-2.png", "3-2.png", "4-2.png", "5-2.png", "6-2.png"];
@@ -122,6 +123,15 @@ function setToDoTheme() {
     doneButton.forEach((button) => button.style.color = colors[theme_index]);
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
 }
+// setToDoInputTheme
+toDoInput.addEventListener("focus", () => {
+    toDoInput.style.outline = "solid";
+    toDoInput.style.outlineColor = colors[theme_index];
+    toDoInput.style.outlineWidth = "3.8px";
+});
+toDoInput.addEventListener("focusout", () => {
+    toDoInput.style.outline = "none";
+});
 function setDoneTheme() {
     const deleteButton = document.querySelectorAll("#done-list #deleteButton");
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);

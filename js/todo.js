@@ -1,5 +1,5 @@
 const toDoForm = document.getElementById("todo-form");
-const toDoInput = toDoForm.querySelector("#todo-form input");
+// const toDoInput = toDoForm.querySelector("#todo-form input"); // in theme.js
 const toDoList = document.getElementById("todo-list");
 const toDoEraseAll = document.querySelector("#second #erase");
 
