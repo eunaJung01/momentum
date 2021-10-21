@@ -136,6 +136,18 @@ function setDoneTheme() {
     const deleteButton = document.querySelectorAll("#done-list #deleteButton");
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
 }
+// setEraseAllTheme
+const eraseAll = document.querySelectorAll("#erase");
+eraseAll.forEach((erase) => {
+    erase.addEventListener("mouseover", () => {
+        erase.style.backgroundColor = colors[theme_index];
+        erase.style.color = "white";
+    });
+    erase.addEventListener("mouseout", () => {
+        erase.style.backgroundColor = "white";
+        erase.style.color = "black";
+    });
+});
 function setRenameTheme() {
     const renameButton = document.querySelector("#rename");
     renameButton.style.textShadow = `${colors[theme_index]} 2px 0 4px`;
