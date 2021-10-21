@@ -12,6 +12,13 @@ const bgColors = ["#f991a0", "#f49b85", "#cadbcd", "#b8c6f6", "#b196c1", "#5e3b5
 const colors = ["#b3d6fd", "#feeeae", "#d2bcfa", "#fa9898", "#bad1fc", "#dfd2fe"];
 
 const firstTheme = Math.floor(Math.random() * bgImages.length); // 처음 시작 시 random
+localStorage.setItem("theme", firstTheme); // save in local storage
+/*
+처음에 닉네임 입력 받을 때 random -> localStorage에 저장
+새로 고침할 때(1. 사용자 임의로 새로 고침 / 2. Erase All을 눌렀을 때) localStorage에 있는 theme 번호를 가져와서 테마가 변경 되지 않도록 하기
+테마 변경 시 localStorage 값 변경
+rename 버튼을 눌렀을 때 다시 random으로 테마 변경
+*/
 setTheme(firstTheme);
 var theme_index = firstTheme; // 초기값
 
