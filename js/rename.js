@@ -5,5 +5,8 @@ renameButton.addEventListener("click", rename);
 function rename() {
     localStorage.setItem(USERNAME_KEY, "");
     checkUserName();
+
+    localStorage.setItem("theme", "");
+    window.location.reload(); // 페이지 새로고침
 }
 setRenameTheme();
