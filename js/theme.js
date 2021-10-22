@@ -11,14 +11,14 @@ const checkedThemeImages = ["1-3.png", "2-3.png", "3-3.png", "4-3.png", "5-3.png
 const bgColors = ["#f991a0", "#f49b85", "#cadbcd", "#b8c6f6", "#b196c1", "#5e3b59"];
 const colors = ["#b3d6fd", "#feeeae", "#d2bcfa", "#fa9898", "#bad1fc", "#dfd2fe"];
 
+var theme_index = null; // 초기값
+
 /*
 처음에 닉네임 입력 받을 때 random -> localStorage에 저장
 새로 고침할 때(1. 사용자 임의로 새로 고침 / 2. Erase All을 눌렀을 때) localStorage에 있는 theme 번호를 가져와서 테마가 변경 되지 않도록 하기
 테마 변경 시 localStorage 값 변경
 rename 버튼을 눌렀을 때 다시 random으로 테마 변경
 */
-
-var theme_index = null; // 초기값
 
 let savedTheme = localStorage.getItem("theme");
 if (savedTheme == null || savedTheme == "") {
@@ -29,9 +29,11 @@ if (savedTheme == null || savedTheme == "") {
 setTheme(theme_index);
 
 function setRandomTheme() {
-    const randomTheme = Math.floor(Math.random() * bgImages.length);
-    localStorage.setItem("theme", randomTheme); // save in local storage
-    return randomTheme;
+    do {
+        const randomTheme = Math.floor(Math.random() * bgImages.length);
+        localStorage.setItem("theme", randomTheme); // save in local storage
+        return randomTheme;
+    } while (randomTheme != lastTheme);
 }
 
 function setTheme(index) {
@@ -53,7 +55,6 @@ function setTheme(index) {
 
     setThemeList(index, checkedTheme);
 }
-
 
 function setThemeList(index, checkedTheme) {
     for (i = 0; i < num; i++) {

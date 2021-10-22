@@ -6,6 +6,7 @@ function rename() {
     localStorage.setItem(USERNAME_KEY, "");
     checkUserName();
 
+    const lastTheme = localStorage.getItem("theme");
     localStorage.setItem("theme", "");
     window.location.reload(); // 페이지 새로고침
 }
