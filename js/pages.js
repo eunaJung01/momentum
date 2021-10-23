@@ -8,6 +8,8 @@ const main = document.querySelector("#page2");
 const container = document.querySelector("#container");
 const renameButton = document.querySelector("#rename");
 
+let page = 1;
+
 // repeating strings
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "userName";
@@ -16,9 +18,11 @@ const USERNAME_KEY = "userName";
 function checkUserName() {
     let savedUserName = localStorage.getItem(USERNAME_KEY);
     if (savedUserName === null || savedUserName === "") {
+        page = 1;
         paint1stPage();
         loginForm.addEventListener("submit", onLoginSubmit);
     } else {
+        page = 2;
         paint2ndPage(savedUserName);
     }
 }
@@ -26,7 +30,8 @@ checkUserName();
 
 // get userName
 function onLoginSubmit(event) {
-    event.preventDefault(); // 엔터 후 새로고침 방지 (고유동작 중지)
+    // event.preventDefault(); // 엔터 후 새로고침 방지 (고유동작 중지)
+    window.location.reload(); // 페이지 새로고침
     const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName); // save in local storage
     paint2ndPage(userName);

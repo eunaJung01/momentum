@@ -47,7 +47,9 @@ function setEventListener(data) {
   });
 }
 
-navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+if (page == 2) {
+  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+}
 function onGeoError() {
   alert("Can't find you. No weather & location for you.");
 }
