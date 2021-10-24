@@ -120,8 +120,10 @@ function setClockTheme() {
 }
 function setAnalogClockTheme() {
     document.querySelector(".inner-clock-face").style.background = colors[theme_index];
-    if (theme_index == 1 || theme_index == 5) {
-        document.querySelector(".second-hand").style.background = "black";
+    if (theme_index == 1) {
+        document.querySelector(".second-hand").style.background = "#fbb112";
+    } else if (theme_index == 5) {
+        document.querySelector(".second-hand").style.background = "#a076e4";
     } else {
         document.querySelector(".second-hand").style.background = "white";
     }
