@@ -17,6 +17,10 @@ const secDiv = document.createElement("div"); // 초침
 secDiv.classList.add("hand", "second-hand");
 innerClockDiv.appendChild(secDiv);
 
+const circle = document.createElement("div"); // 중앙 원
+circle.classList.add("inner-clock-face-circle");
+innerClockDiv.appendChild(circle);
+
 setAnalogClockTheme();
 
 // 무소음 시계 구현
