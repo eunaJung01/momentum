@@ -17,7 +17,7 @@ const secDiv = document.createElement("div"); // 초침
 secDiv.classList.add("hand", "second-hand");
 innerClockDiv.appendChild(secDiv);
 
-const circle = document.createElement("div"); // 중앙 원
+const circle = document.createElement("div"); // 중앙원
 circle.classList.add("inner-clock-face-circle");
 innerClockDiv.appendChild(circle);
 
@@ -29,7 +29,7 @@ function setDate() {
     const h = now.getHours();
     const m = now.getMinutes();
     const s = now.getSeconds();
-    const ms = now.getMilliseconds();
+    const ms = now.getMilliseconds(); // 틱 없이 구현하기 위해선 필요
 
     // degrees
     const hDeg = h * (360 / 12);
@@ -37,6 +37,7 @@ function setDate() {
     const sDeg = s * (360 / 60);
     const msDeg = ms * (6 / 1000);
 
+    // rotate
     hourDiv.style.transform = `rotate(${hDeg + (mDeg / 360) * (360 / 12) + 90}deg)`;
     minDiv.style.transform = `rotate(${mDeg + (sDeg / 360) * (360 / 60) + 90}deg)`;
     secDiv.style.transform = `rotate(${msDeg + sDeg + 90}deg)`;
