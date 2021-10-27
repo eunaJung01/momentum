@@ -4,7 +4,7 @@ renameButton.addEventListener("click", rename);
 
 function rename() {
     page = 1;
-    
+
     localStorage.setItem(USERNAME_KEY, ""); // reset localStorage "userName"
     checkUserName(); // in pages.js
 
