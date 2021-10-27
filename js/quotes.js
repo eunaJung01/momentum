@@ -43,7 +43,7 @@ const quotes = [
   ];
   
   const quote = document.querySelector("#quote");
-  const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)]; // quote 랜덤 지정
   
   quote.innerText = `${todaysQuote.quote} - ${todaysQuote.author}`;
 
