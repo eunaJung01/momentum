@@ -5,15 +5,23 @@ const DONES_KEY = "dones";
 
 let dones = [];
 
-function saveDones() {
-    localStorage.setItem(DONES_KEY, JSON.stringify(dones));
-}
+// dones 배열에 push
+let doneID = null;
+function handleDoneSubmit(event) {
+    doneID = parseInt(event.path[1].id);
 
-function deleteDone(event) {
-    const li = event.target.parentElement;
-    li.remove();
-    dones = dones.filter((done) => done.id !== parseInt(li.id)); // 왜 dones 배열에 반영이 안될까.. : done.id가 문자열로 저장되어 있었음
+    const newDoneObj = {
+        text: toDos.find(findID).text,
+        id: doneID,
+    };
+    dones.push(newDoneObj);
+    paintDone(newDoneObj);
     saveDones();
+}
+function findID(element) {
+    if (doneID !== null) {
+        if (element.id == doneID) { return true; } // === 말고 ==로 했어야 함
+    }
 }
 
 function paintDone(newDone) {
@@ -34,26 +42,18 @@ function paintDone(newDone) {
     setDoneTheme();
 }
 
-// dones 배열에 push
-let doneID = null;
-function handleDoneSubmit(event) {
-    doneID = parseInt(event.path[1].id);
+function saveDones() {
+    localStorage.setItem(DONES_KEY, JSON.stringify(dones));
+}
 
-    const newDoneObj = {
-        text: toDos.find(findID).text,
-        id: doneID,
-    };
-    dones.push(newDoneObj);
-    paintDone(newDoneObj);
+function deleteDone(event) {
+    const li = event.target.parentElement;
+    li.remove();
+    dones = dones.filter((done) => done.id !== parseInt(li.id)); // 왜 dones 배열에 반영이 안될까.. : done.id가 문자열로 저장되어 있었음 → parseInt(event.path[1].id)로 변경
     saveDones();
 }
 
-function findID(element) {
-    if (doneID !== null) {
-        if (element.id == doneID) { return true; } // === 말고 ==로 했어야 함
-    }
-}
-
+// check localStorage "dones"
 const savedDones = localStorage.getItem(DONES_KEY);
 if (savedDones !== null) {
     const parsedDones = JSON.parse(savedDones);
@@ -61,6 +61,7 @@ if (savedDones !== null) {
     parsedDones.forEach(paintDone);
 }
 
+// Erase All
 doneEraseAll.addEventListener("click", () => {
     if (confirm("Are you sure?") == true) {
         dones = [];
