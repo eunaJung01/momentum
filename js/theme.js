@@ -13,13 +13,7 @@ const colors = ["#b3d6fd", "#feeeae", "#d2bcfa", "#fa9898", "#bad1fc", "#dfd2fe"
 
 var theme_index = null; // 초기값
 
-/*
-처음에 닉네임 입력 받을 때 random -> localStorage에 저장
-새로 고침할 때(1. 사용자 임의로 새로 고침 / 2. Erase All을 눌렀을 때) localStorage에 있는 theme 번호를 가져와서 테마가 변경 되지 않도록 하기
-테마 변경 시 localStorage 값 변경
-rename 버튼을 눌렀을 때 다시 random으로 테마 변경
-*/
-
+// check theme in localStorage
 let savedTheme = localStorage.getItem("theme");
 if (savedTheme == null || savedTheme == "") {
     theme_index = setRandomTheme();
@@ -28,21 +22,21 @@ if (savedTheme == null || savedTheme == "") {
 }
 setTheme(theme_index);
 
+// 테마 랜덤 생성
 function setRandomTheme() {
     do {
         const randomTheme = Math.floor(Math.random() * bgImages.length);
         localStorage.setItem("theme", randomTheme); // save in local storage
         return randomTheme;
-    } while (randomTheme != lastTheme);
+    } while (randomTheme != lastTheme); // lastTheme : in rename.js (랜덤 생성 시 전과 같은 테마 나오지 않도록)
 }
 
 function setTheme(index) {
     theme_index = index;
-    const chosenImage = bgImages[index];
-    const chosenTheme = themeImages[index];
-    const checkedTheme = checkedThemeImages[index];
-    const chosenColor = colors[index];
-    const chosenBgColor = bgColors[index];
+    const chosenImage = bgImages[theme_index];
+    const chosenTheme = themeImages[theme_index];
+    const checkedTheme = checkedThemeImages[theme_index];
+    const chosenColor = colors[theme_index];
 
     document.querySelector("body").style.backgroundImage = `url(img/${chosenImage})`;
     document.querySelector(".clock").style.background = chosenColor;
@@ -53,7 +47,7 @@ function setTheme(index) {
     button.appendChild(buttonImg);
     setButtonAction(buttonImg);
 
-    setThemeList(index, checkedTheme);
+    setThemeList(theme_index, checkedTheme);
 }
 
 function setThemeList(index, checkedTheme) {
@@ -82,9 +76,9 @@ function setThemeListAction() {
     }
 }
 function changeTheme() {
-    remove();
+    remove(); // remove theme button & theme list
     theme_index = this.id;
-    localStorage.setItem("theme", theme_index);
+    localStorage.setItem("theme", theme_index); // save in local storage
 
     setTheme(theme_index);
     setAnalogClockTheme(theme_index);
@@ -111,6 +105,7 @@ function setQuotesTheme() {
     quote.style.background = colors[theme_index];
     quote.style.border = `1px solid ${colors[theme_index]}`;
 }
+
 function setClockTheme() {
     if (theme_index == 5) {
         document.querySelector("#time .clock").style.color = "white";
@@ -118,6 +113,7 @@ function setClockTheme() {
         document.querySelector("#time .clock").style.color = "black";
     }
 }
+
 function setAnalogClockTheme() {
     document.querySelector(".inner-clock-face").style.background = colors[theme_index];
     if (theme_index == 1) {
@@ -128,6 +124,7 @@ function setAnalogClockTheme() {
         document.querySelector(".second-hand").style.background = "white";
     }
 }
+
 function setCalendarTheme_today() {
     const today = document.querySelector(".calendar-table td.today");
     if (today) {
@@ -140,12 +137,14 @@ function setCalendarTheme_active() {
         day_active.style.background = bgColors[theme_index];
     }
 }
+
 function setToDoTheme() {
     const doneButton = document.querySelectorAll("#todo-list #doneButton");
     const deleteButton = document.querySelectorAll("#todo-list #deleteButton");
     doneButton.forEach((button) => button.style.color = colors[theme_index]);
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
 }
+
 // setToDoInputTheme
 toDoInput.addEventListener("focus", () => {
     toDoInput.style.outline = "solid";
@@ -155,10 +154,12 @@ toDoInput.addEventListener("focus", () => {
 toDoInput.addEventListener("focusout", () => {
     toDoInput.style.outline = "none";
 });
+
 function setDoneTheme() {
     const deleteButton = document.querySelectorAll("#done-list #deleteButton");
     deleteButton.forEach((button) => button.style.color = bgColors[theme_index]);
 }
+
 // setEraseAllTheme
 const eraseAll = document.querySelectorAll("#erase");
 eraseAll.forEach((erase) => {
@@ -171,6 +172,7 @@ eraseAll.forEach((erase) => {
         erase.style.color = "black";
     });
 });
+
 function setRenameTheme() {
     const renameButton = document.querySelector("#rename");
     renameButton.style.textShadow = `${colors[theme_index]} 2px 0 4px`;
