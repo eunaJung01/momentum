@@ -1,3 +1,18 @@
+/*
+화면 이동 구현하기
+1st page -> 2nd page으로 넘어갈 때만
+(2nd -> 1st으로는 테마가 변경되기 때문에 부자연스러울듯)
+
+1st page가 위로 밀려나가면서 2nd page가 올라오는 느낌으로
+한 4초정도??
+
+transform.translate(x,y) 사용하기
+https://codingbroker.tistory.com/54
+
+이동 애니메이션 여러개 만들어서 랜덤으로 실행하는 것도 좋을 듯
+*/
+
+const page1 = document.querySelector("#page1");
 const page1_clock = document.querySelector("#page1 .clock");
 const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
@@ -30,13 +45,18 @@ checkUserName();
 
 // get userName
 function onLoginSubmit(event) {
-    // event.preventDefault(); // 페이지 변경이 없는 경우 : 엔터 후 새로고침 방지 (고유 동작 중지)
-    window.location.reload(); // 페이지 새로고침
+    event.preventDefault(); // 페이지 변경이 없는 경우 : 엔터 후 새로고침 방지 (고유 동작 중지)
+    // window.location.reload(); // 페이지 새로고침
 
     const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName); // save in local storage
     paint2ndPage(userName);
     loginInput.value = null; // clear login-form input
+
+    movePage1();
+}
+function movePage1() {
+
 }
 
 function paint1stPage() {
