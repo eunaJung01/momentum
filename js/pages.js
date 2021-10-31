@@ -50,13 +50,25 @@ function onLoginSubmit(event) {
 
     const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName); // save in local storage
-    paint2ndPage(userName);
+    // paint2ndPage(userName);
     loginInput.value = null; // clear login-form input
 
     movePage1();
+    // movePage2();
 }
 function movePage1() {
+    const page1Rect = page1.getBoundingClientRect();
+    let pos = page1Rect.top + 110;
 
+    let id = setInterval(frame, 1);
+    function frame() {
+        if (pos == 0) {
+            clearInterval(id);
+        } else {
+            page1.style.top = pos + 'px';
+            pos--;
+        }
+    }
 }
 
 function paint1stPage() {
