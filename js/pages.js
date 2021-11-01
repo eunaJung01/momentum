@@ -31,6 +31,8 @@ let page = 1; // 현재 어느 page에 있는지 감지 (for theme changing cond
 
 // check userName in localStorage
 function checkUserName() {
+    loginInput.value = null; // clear login-form input
+    
     let savedUserName = localStorage.getItem(USERNAME_KEY);
     if (savedUserName === null || savedUserName === "") {
         page = 1;
@@ -50,17 +52,19 @@ function onLoginSubmit(event) {
 
     const userName = loginInput.value;
     localStorage.setItem(USERNAME_KEY, userName); // save in local storage
-    // paint2ndPage(userName);
-    loginInput.value = null; // clear login-form input
-
+    paintGreetings(userName);
+    loginInput.readOnly = true;
+    
     movePage();
+    page = 2;
 }
+
 function movePage() {
     const page1Rect = page1.getBoundingClientRect();
     const page2Rect = page2.getBoundingClientRect();
     let pos1 = page1Rect.top + 110;
     let pos2 = page2Rect.top;
-
+    
     let id = setInterval(frame, 1);
     function frame() {
         if (pos2 == 6) {
@@ -73,13 +77,10 @@ function movePage() {
         }
     }
 }
-function movePage2() {
-
-}
 
 function paint1stPage() {
-    loginForm.classList.remove(HIDDEN_CLASSNAME);
-    page1_clock.classList.remove(HIDDEN_CLASSNAME);
+    // loginForm.classList.remove(HIDDEN_CLASSNAME);
+    // page1_clock.classList.remove(HIDDEN_CLASSNAME);
 
     // page2.classList.add(HIDDEN_CLASSNAME);
     // quote.classList.add(HIDDEN_CLASSNAME);
@@ -88,14 +89,14 @@ function paint1stPage() {
 }
 
 function paint2ndPage(userName) {
-    loginForm.classList.add(HIDDEN_CLASSNAME);
-    page1_clock.classList.add(HIDDEN_CLASSNAME);
+    // loginForm.classList.add(HIDDEN_CLASSNAME);
+    // page1_clock.classList.add(HIDDEN_CLASSNAME);
 
     paintGreetings(userName);
-    page2.classList.remove(HIDDEN_CLASSNAME);
-    quote.classList.remove(HIDDEN_CLASSNAME);
-    container.classList.remove(HIDDEN_CLASSNAME);
-    renameButton.classList.remove(HIDDEN_CLASSNAME);
+    // page2.classList.remove(HIDDEN_CLASSNAME);
+    // quote.classList.remove(HIDDEN_CLASSNAME);
+    // container.classList.remove(HIDDEN_CLASSNAME);
+    // renameButton.classList.remove(HIDDEN_CLASSNAME);
 }
 
 function paintGreetings(userName) {
