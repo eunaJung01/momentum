@@ -13,6 +13,7 @@ input::placeholder {
 
 body {
     background-size: 100%;
+    overflow: hidden;
 }
 
 #theme {
@@ -117,6 +118,7 @@ body {
 
 #page2 {
     position: absolute;
+    top: 100%;
     display: block;
     left: 75px;
     height: auto;

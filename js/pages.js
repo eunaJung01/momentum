@@ -53,32 +53,38 @@ function onLoginSubmit(event) {
     // paint2ndPage(userName);
     loginInput.value = null; // clear login-form input
 
-    movePage1();
-    // movePage2();
+    movePage();
 }
-function movePage1() {
+function movePage() {
     const page1Rect = page1.getBoundingClientRect();
-    let pos = page1Rect.top + 110;
+    const page2Rect = page2.getBoundingClientRect();
+    let pos1 = page1Rect.top + 110;
+    let pos2 = page2Rect.top;
 
     let id = setInterval(frame, 1);
     function frame() {
-        if (pos == 0) {
+        if (pos2 == 6) {
             clearInterval(id);
         } else {
-            page1.style.top = pos + 'px';
-            pos--;
+            page1.style.top = pos1 + 'px';
+            page2.style.top = pos2 + 'px';
+            pos1--;
+            pos2--;
         }
     }
+}
+function movePage2() {
+
 }
 
 function paint1stPage() {
     loginForm.classList.remove(HIDDEN_CLASSNAME);
     page1_clock.classList.remove(HIDDEN_CLASSNAME);
 
-    page2.classList.add(HIDDEN_CLASSNAME);
-    quote.classList.add(HIDDEN_CLASSNAME);
-    container.classList.add(HIDDEN_CLASSNAME);
-    renameButton.classList.add(HIDDEN_CLASSNAME);
+    // page2.classList.add(HIDDEN_CLASSNAME);
+    // quote.classList.add(HIDDEN_CLASSNAME);
+    // container.classList.add(HIDDEN_CLASSNAME);
+    // renameButton.classList.add(HIDDEN_CLASSNAME);
 }
 
 function paint2ndPage(userName) {
