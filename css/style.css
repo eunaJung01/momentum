@@ -119,8 +119,8 @@ body {
 #page2 {
     position: absolute;
     top: 100%;
-    display: block;
     left: 75px;
+    display: block;
     height: auto;
 }
 

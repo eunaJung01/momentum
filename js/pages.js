@@ -32,7 +32,7 @@ let page = 1; // 현재 어느 page에 있는지 감지 (for theme changing cond
 // check userName in localStorage
 function checkUserName() {
     loginInput.value = null; // clear login-form input
-    
+
     let savedUserName = localStorage.getItem(USERNAME_KEY);
     if (savedUserName === null || savedUserName === "") {
         page = 1;
@@ -79,24 +79,37 @@ function movePage() {
 }
 
 function paint1stPage() {
-    // loginForm.classList.remove(HIDDEN_CLASSNAME);
-    // page1_clock.classList.remove(HIDDEN_CLASSNAME);
+    /*
+    1st, 2nd page : 초기 위치
+    top 부분만 변경됨
 
-    // page2.classList.add(HIDDEN_CLASSNAME);
-    // quote.classList.add(HIDDEN_CLASSNAME);
-    // container.classList.add(HIDDEN_CLASSNAME);
-    // renameButton.classList.add(HIDDEN_CLASSNAME);
+    #page1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+    #page2 {
+    position: absolute;
+    top: 100%;
+    left: 75px;
+    display: block;
+    height: auto;
+    }
+    */
+
+    page1.style.top = "50%";
+    page2.style.top = "100%";
 }
 
 function paint2ndPage(userName) {
-    // loginForm.classList.add(HIDDEN_CLASSNAME);
-    // page1_clock.classList.add(HIDDEN_CLASSNAME);
-
     paintGreetings(userName);
-    // page2.classList.remove(HIDDEN_CLASSNAME);
-    // quote.classList.remove(HIDDEN_CLASSNAME);
-    // container.classList.remove(HIDDEN_CLASSNAME);
-    // renameButton.classList.remove(HIDDEN_CLASSNAME);
+    /*
+    1st page : .hidden 추가 또는 위 안보이는 공간으로 옮기기
+    2nd page : position: absolute; top: 6px
+    */
+    page1.classList.add(HIDDEN_CLASSNAME);
+    page2.style.top = "6px";
 }
 
 function paintGreetings(userName) {
