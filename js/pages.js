@@ -54,6 +54,7 @@ function movePage() {
     function frame() {
         if (pos2 == 6) {
             clearInterval(id);
+            page2.style.top = "6.5px";
         } else {
             page1.style.top = pos1 + 'px';
             page2.style.top = pos2 + 'px';
@@ -71,7 +72,7 @@ function paint1stPage() {
 function paint2ndPage(userName) {
     paintGreetings(userName);
     page1.classList.add(HIDDEN_CLASSNAME);
-    page2.style.top = "6px";
+    page2.style.top = "6.5px";
 }
 
 // paint userName in 2nd page
