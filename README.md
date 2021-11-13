@@ -1,18 +1,17 @@
 # momentum
-
-Nomad Coders - Vanilla JS Course (기능 확장)
+##### Nomad Coders - Vanilla JS Course (기능 확장)
 ---
 ## 기능 설명
 
-`Themes`
+#### `Themes`
 ---
-`1st Page`<br>
+#### `1st Page`<br>
 [ Clock ]<br>
 [ Login ]<br>
 ---
-`Screen Movements`
+#### `Screen Movements`
 ---
-`2nd Page`<br>
+#### `2nd Page`<br>
 [ Quotes ]<br>
 [ Greetings ]<br>
 [ Analog Clock ]<br>
