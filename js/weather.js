@@ -6,9 +6,11 @@ const temperature = document.querySelector("#weather-location div:nth-child(2)")
 const city = document.querySelector("#weather-location div:last-child");
 
 // ask geolocation only in 2nd page
-if (page == 2) {
-  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
-}
+// if (page == 2) {
+//   navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+// }
+navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+
 function onGeoError() {
   alert("Can't find you. No weather & location for you.");
 }
